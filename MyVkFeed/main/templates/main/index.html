@@ -1,0 +1,66 @@
+{% extends 'main/base.html' %}
+{% load main_tags %}
+{% load static %}
+
+{% block content %}
+<body>
+            <div class="container my-5">
+                <div class="row infinite-container">
+                     {% for post in posts.iterator %}
+                       <div class="col-md-6 infinite-item">
+                        <h2>{{ post.title }}</h2>
+                        <h3>{{ post.date }}</h3>
+                        {{ post.text|linebreaks|truncatewords:100 }}
+                        {% if post.text|length > 100 %}
+                           <a class="post-continue-reading-ref" href="{{ post.get_absolute_url }}"><p>читать дальше...</p></a>
+                        {% endif %}
+                        {% if post.photo_count != 0 %}
+                           {% getpostphotos post_obj=post as post_photos %}
+                           <div class="post-imgs">
+                               {% for photo in post_photos %}
+                                   <div class="imgs-container">
+                                       <a href="{{ photo.image }}"><img src="{{ photo.image }}" alt="Картинка #{{ forloop.counter }}"></a>
+                                   </div>
+                               {% endfor %}
+                           </div>
+                           {% endif %}
+                        </div>
+            {% empty %}
+                <div class="info">
+                    <p>Нет сохранённых постов. Возможно, вы либо убрали все группы из ленты, либо не подписаны ни на одну группу.</p>
+                </div>
+           {% endfor %}
+                </div>
+                {% if page_obj.has_next %}
+                    <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}"></a>
+                {% endif %}
+                <div class="d-flex justify-content-center" style="display:none;">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+    <script src="{% static 'main/js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'main/js/infinite.min.js' %}"></script>
+    <script>
+    var infinite = new Waypoint.Infinite({
+        element: $('.infinite-container')[0],
+        handler: function(direction) {
+
+    },
+    offset: 'bottom-in-view',
+    onBeforePageLoad: function () {
+    $('.spinner-border').show();
+    },
+    onAfterPageLoad: function () {
+    $('.spinner-border').hide();
+    }
+
+
+    });
+
+              </script>
+    </body>
+{% endblock %}

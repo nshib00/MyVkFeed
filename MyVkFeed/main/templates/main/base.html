@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'main/css/main_style9.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'main/css/post_style5.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'main/css/search_posts_style5.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'main/css/filters_style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'main/css/subs_style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'main/css/login_style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'main/css/start_page_style.css' %}" type="text/css" />
+
+    <link rel="shortcut icon" href="{% static 'main/images/favicon.png' %}" type="image/png" />
+</head>
+<header>
+    <span class="menu-container">
+    <div class="topmenu">
+        {% block menu %}
+            {% for item in menu %}
+                {% if forloop.first %}
+                    <div class="logo" valign="top">
+                        <a class="home-ref" href="{% url 'home' %}"></a>
+                    </div>
+                {% else %}
+                    <span class="topmenu-item" valign="top">
+                        <a class="topmenu-item-ref" href="{% url item.url_name %}">{{ item.title }}</a>
+                    </span>
+                {% endif %}
+            {% endfor %}
+    </div>
+        {% if user.is_authenticated %}
+            <div class="login" valign="top">
+                <p>{{ user.username }}</p>
+                <p><a class="login-ref" href="{% url 'account_logout' %}">Выйти</a></p>
+            </div>
+        {% else %}
+            <div class="login" valign="top">
+                <p>{{ user.username }}</p>
+                <a class="login-ref" href="{% url 'account_login' %}">Войти</a>
+            </div>
+        {% endif %}
+    {% endblock menu %}
+    </div>
+    </span>
+</header>
+<body>
+    {% block content %}
+    {% endblock content %}
+
+    {% block pagination %}
+    {% endblock %}
+</body>
+{% block footer %}
+{% endblock %}
+
+{% block app_info %}
+<div class="app-name">
+    <p>MyVkFeed v{{ version }} by nshib<br>{{ year }}</br>
+</div>
+{% endblock %}
+</html>

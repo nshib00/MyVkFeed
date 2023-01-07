@@ -1,0 +1,5 @@
+/MyVkFeed/.env
+/MyVkFeed/archive
+/MyVkFeed/logs
+MyVkFeed/db2.sqlite3
+MyVkFeed/db3.sqlite3

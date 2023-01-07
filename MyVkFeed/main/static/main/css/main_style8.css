@@ -1,0 +1,119 @@
+html {
+      font-size: 110%;
+      background-color: #252525;
+      color: #c0c0c0;
+      text-align: left;
+      font-family: Verdana;
+  }
+
+header {
+    background-color: #202020;
+    text-align: justify;
+    border: 1px solid gray;
+}
+
+a {
+    color: #c7c7c7;
+}
+
+a:hover {
+    color: #ebebeb;
+}
+
+.home-ref, .topmenu-item-ref, .login-ref {
+    text-decoration: none;
+    text-align: center;
+}
+
+.home-ref {
+    background: url('../images/app_logo.png') no-repeat;
+    display: block;
+    width: 308px;
+    height: 80px;
+    margin-right: 5px;
+}
+
+.topmenu, .page-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-list {
+    list-style-type: none;
+}
+
+.page {
+    padding: 0 30px 0;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+.page-ref {
+    text-decoration: none;
+    color: #d0d0d0;
+}
+
+.page-ref:visited {
+    text-decoration: none;
+    color: #d0d0d0;
+}
+
+.page-ref:hover {
+    text-decoration: underline;
+    color: #f0f0f0;
+}
+
+.current-page {
+    text-decoration: underline;
+    color: #b5b5b5;
+    font-size: 23px;
+}
+
+.prev-page-ref:hover, .next-page-ref:hover {
+    text-decoration: none;
+}
+
+.topmenu-item-ref, .login-ref {
+    color: #b5b5b5;
+    font-family: Gabriola;
+    font-size: 25px;
+    display: inline-block;
+    padding: 20px;
+}
+
+a:visited {
+    color: #b5b5b5;
+}
+
+.login-ref {
+   color: #b5b5b5;
+   margin-left: 30px;
+}
+
+.topmenu-item-ref:hover, .login-ref:hover {
+    color: #e0e0e0;
+}
+
+.app-name {
+    height: 40px;
+    background-color: #202020;
+    text-align: center;
+    padding: 0 0 0 0;
+   }
+
+.app-name p {
+    font-size: 14px;
+    margin: 3px 0;
+}
+
+#next-post-load {
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+::-webkit-scrollbar {
+    background-color: #202020;
+}
