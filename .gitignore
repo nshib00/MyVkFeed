@@ -2,6 +2,6 @@
 logs
 *.sqlite3
 .idea
-posts.json
 __pycache__
+posts.json
 venv
