@@ -4,15 +4,26 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+<<<<<<< HEAD
 
     dependencies = [
         ('main', '0007_remove_group_group_id_add_group_is_hidden'),
+=======
+    dependencies = [
+        ("main", "0007_remove_group_group_id_add_group_is_hidden"),
+>>>>>>> dev
     ]
 
     operations = [
         migrations.AddField(
+<<<<<<< HEAD
             model_name='group',
             name='is_hidden',
             field=models.BooleanField(default=False, verbose_name='Скрытая группа'),
+=======
+            model_name="group",
+            name="is_hidden",
+            field=models.BooleanField(default=False, verbose_name="Скрытая группа"),
+>>>>>>> dev
         ),
     ]

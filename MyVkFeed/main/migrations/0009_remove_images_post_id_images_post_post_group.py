@@ -5,13 +5,19 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+<<<<<<< HEAD
 
     dependencies = [
         ('main', '0008_group_is_hidden'),
+=======
+    dependencies = [
+        ("main", "0008_group_is_hidden"),
+>>>>>>> dev
     ]
 
     operations = [
         migrations.RemoveField(
+<<<<<<< HEAD
             model_name='images',
             name='post_id',
         ),
@@ -24,5 +30,29 @@ class Migration(migrations.Migration):
             model_name='post',
             name='group',
             field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='main.group', verbose_name='ID автора поста'),
+=======
+            model_name="images",
+            name="post_id",
+        ),
+        migrations.AddField(
+            model_name="images",
+            name="post",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="main.post",
+                verbose_name="ID поста",
+            ),
+        ),
+        migrations.AddField(
+            model_name="post",
+            name="group",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="main.group",
+                verbose_name="ID автора поста",
+            ),
+>>>>>>> dev
         ),
     ]

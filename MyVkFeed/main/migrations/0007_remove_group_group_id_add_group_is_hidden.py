@@ -4,14 +4,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+<<<<<<< HEAD
 
     dependencies = [
         ('main', '0006_alter_images_options_alter_images_post_id_and_more'),
+=======
+    dependencies = [
+        ("main", "0006_alter_images_options_alter_images_post_id_and_more"),
+>>>>>>> dev
     ]
 
     operations = [
         migrations.RemoveField(
+<<<<<<< HEAD
             model_name='group',
             name='group_id',
+=======
+            model_name="group",
+            name="group_id",
+>>>>>>> dev
         ),
     ]

@@ -5,13 +5,19 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+<<<<<<< HEAD
 
     dependencies = [
         ('main', '0001_initial'),
+=======
+    dependencies = [
+        ("main", "0001_initial"),
+>>>>>>> dev
     ]
 
     operations = [
         migrations.CreateModel(
+<<<<<<< HEAD
             name='Images',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -52,5 +58,78 @@ class Migration(migrations.Migration):
             model_name='post',
             name='photo_ref',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main.images'),
+=======
+            name="Images",
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "post_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="main.images",
+                        verbose_name="ID поста",
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True,
+                        null=True,
+                        upload_to="photos\\%Y\\%m\\%d",
+                        verbose_name="Фото",
+                    ),
+                ),
+            ],
+        ),
+        migrations.AlterModelOptions(
+            name="post",
+            options={
+                "ordering": ["-accurate_date", "title", "pk"],
+                "verbose_name": "Все посты",
+                "verbose_name_plural": "Все посты",
+            },
+        ),
+        migrations.AddField(
+            model_name="post",
+            name="accurate_date",
+            field=models.IntegerField(default=0),
+        ),
+        migrations.AddField(
+            model_name="post",
+            name="photo_count",
+            field=models.IntegerField(default=0, verbose_name="Количество фото"),
+        ),
+        migrations.AlterField(
+            model_name="post",
+            name="date",
+            field=models.CharField(max_length=16, verbose_name="Дата публикации"),
+        ),
+        migrations.AlterField(
+            model_name="post",
+            name="text",
+            field=models.TextField(blank=True, verbose_name="Текст"),
+        ),
+        migrations.AlterField(
+            model_name="post",
+            name="title",
+            field=models.CharField(
+                max_length=255, verbose_name="Автор поста", null=True, blank=True
+            ),
+        ),
+        migrations.AlterField(
+            model_name="post",
+            name="photo_ref",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="main.images"
+            ),
+>>>>>>> dev
         ),
     ]

@@ -4,13 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+<<<<<<< HEAD
 
     dependencies = [
         ('main', '0012_group_image'),
+=======
+    dependencies = [
+        ("main", "0012_group_image"),
+>>>>>>> dev
     ]
 
     operations = [
         migrations.AlterModelOptions(
+<<<<<<< HEAD
             name='images',
             options={'verbose_name': 'Изображение', 'verbose_name_plural': 'Изображения'},
         ),
@@ -30,6 +36,34 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='accurate_date',
+=======
+            name="images",
+            options={
+                "verbose_name": "Изображение",
+                "verbose_name_plural": "Изображения",
+            },
+        ),
+        migrations.AlterModelOptions(
+            name="post",
+            options={
+                "ordering": ["-accurate_date"],
+                "verbose_name": "Пост",
+                "verbose_name_plural": "Посты",
+            },
+        ),
+        migrations.RemoveField(
+            model_name="images",
+            name="post",
+        ),
+        migrations.AddField(
+            model_name="post",
+            name="images",
+            field=models.ManyToManyField(blank=True, to="main.images"),
+        ),
+        migrations.AlterField(
+            model_name="post",
+            name="accurate_date",
+>>>>>>> dev
             field=models.IntegerField(db_index=True, default=0),
         ),
     ]

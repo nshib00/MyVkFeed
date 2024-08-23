@@ -4,15 +4,32 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+<<<<<<< HEAD
 
     dependencies = [
         ('main', '0010_remove_post_group_post_by_hidden_group'),
+=======
+    dependencies = [
+        ("main", "0010_remove_post_group_post_by_hidden_group"),
+>>>>>>> dev
     ]
 
     operations = [
         migrations.AlterField(
+<<<<<<< HEAD
             model_name='images',
             name='image',
             field=models.ImageField(blank=True, db_index=True, null=True, upload_to='photos/%Y/%m/%d', verbose_name='Фото'),
+=======
+            model_name="images",
+            name="image",
+            field=models.ImageField(
+                blank=True,
+                db_index=True,
+                null=True,
+                upload_to="photos/%Y/%m/%d",
+                verbose_name="Фото",
+            ),
+>>>>>>> dev
         ),
     ]

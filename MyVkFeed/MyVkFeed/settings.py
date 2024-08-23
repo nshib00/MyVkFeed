@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4vzt2n@v5ouboi-!nvy2aitq$xn9ap2=)!-vt1p6w1rtkux&^l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # ПРОБЛЕМА: при debug=False CSS не работает.
+DEBUG = True # пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅ debug=False CSS пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 
 ALLOWED_HOSTS = ['127.0.0.1']
 

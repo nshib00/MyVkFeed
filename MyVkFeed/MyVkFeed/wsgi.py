@@ -11,6 +11,10 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+<<<<<<< HEAD
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MyVkFeed.settings')
+=======
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "MyVkFeed.settings")
+>>>>>>> dev
 
 application = get_wsgi_application()

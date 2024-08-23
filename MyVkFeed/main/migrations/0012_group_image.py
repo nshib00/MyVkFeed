@@ -4,15 +4,31 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+<<<<<<< HEAD
 
     dependencies = [
         ('main', '0011_alter_images_image'),
+=======
+    dependencies = [
+        ("main", "0011_alter_images_image"),
+>>>>>>> dev
     ]
 
     operations = [
         migrations.AddField(
+<<<<<<< HEAD
             model_name='group',
             name='image',
             field=models.ImageField(default=None, null=True, upload_to='photos/groups/%Y/%m/%d', verbose_name='Аватар группы'),
+=======
+            model_name="group",
+            name="image",
+            field=models.ImageField(
+                default=None,
+                null=True,
+                upload_to="photos/groups/%Y/%m/%d",
+                verbose_name="Аватар группы",
+            ),
+>>>>>>> dev
         ),
     ]

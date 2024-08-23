@@ -4,13 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+<<<<<<< HEAD
 
     dependencies = [
         ('main', '0002_images_alter_post_options_post_accurate_date_and_more'),
+=======
+    dependencies = [
+        ("main", "0002_images_alter_post_options_post_accurate_date_and_more"),
+>>>>>>> dev
     ]
 
     operations = [
         migrations.RemoveField(
+<<<<<<< HEAD
             model_name='post',
             name='photo_ref',
         ),
@@ -18,5 +24,20 @@ class Migration(migrations.Migration):
             model_name='images',
             name='image',
             field=models.ImageField(blank=True, db_index=True, null=True, upload_to='photos\\%Y\\%m\\%d', verbose_name='Фото'),
+=======
+            model_name="post",
+            name="photo_ref",
+        ),
+        migrations.AlterField(
+            model_name="images",
+            name="image",
+            field=models.ImageField(
+                blank=True,
+                db_index=True,
+                null=True,
+                upload_to="photos\\%Y\\%m\\%d",
+                verbose_name="Фото",
+            ),
+>>>>>>> dev
         ),
     ]

@@ -5,13 +5,19 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+<<<<<<< HEAD
 
     dependencies = [
         ('main', '0005_alter_images_post_id'),
+=======
+    dependencies = [
+        ("main", "0005_alter_images_post_id"),
+>>>>>>> dev
     ]
 
     operations = [
         migrations.AlterModelOptions(
+<<<<<<< HEAD
             name='images',
             options={'ordering': ['post_id'], 'verbose_name': 'Изображение', 'verbose_name_plural': 'Изображения'},
         ),
@@ -36,6 +42,66 @@ class Migration(migrations.Migration):
                 'verbose_name': 'Группа',
                 'verbose_name_plural': 'Группы',
                 'ordering': ['group_title'],
+=======
+            name="images",
+            options={
+                "ordering": ["post_id"],
+                "verbose_name": "Изображение",
+                "verbose_name_plural": "Изображения",
+            },
+        ),
+        migrations.AlterField(
+            model_name="images",
+            name="post_id",
+            field=models.ForeignKey(
+                blank=True,
+                db_constraint=False,
+                default=None,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="main.post",
+                verbose_name="ID поста",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="post",
+            name="text",
+            field=models.TextField(default=None, null=True, verbose_name="Текст"),
+        ),
+        migrations.CreateModel(
+            name="Group",
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "group_title",
+                    models.CharField(max_length=100, verbose_name="Название"),
+                ),
+                (
+                    "group_id",
+                    models.ForeignKey(
+                        blank=True,
+                        db_constraint=False,
+                        default=None,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="main.post",
+                        verbose_name="ID группы",
+                    ),
+                ),
+            ],
+            options={
+                "verbose_name": "Группа",
+                "verbose_name_plural": "Группы",
+                "ordering": ["group_title"],
+>>>>>>> dev
             },
         ),
     ]

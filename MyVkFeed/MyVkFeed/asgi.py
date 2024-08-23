@@ -11,6 +11,10 @@ import os
 
 from django.core.asgi import get_asgi_application
 
+<<<<<<< HEAD
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MyVkFeed.settings')
+=======
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "MyVkFeed.settings")
+>>>>>>> dev
 
 application = get_asgi_application()
