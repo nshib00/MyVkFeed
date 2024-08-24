@@ -1,12 +1,40 @@
-div {
-    border: 1px solid gray;
+div, table {
+    border: 0.5px solid gray;
+    border-radius: 5px;
     padding: 10px 40px 25px 40px;
+    display: block;
 }
-img, table {
-    border: 1px solid #ebebeb;
+
+img {
+    border: 0.5px solid #ebebeb;
     border-radius: 5px;
     display: block;
-    margin: 0px auto 0px auto;
+}
+
+.post {
+    padding-bottom: 5px;
+    margin: 15px 0 15px;
+}
+
+.post-continue-reading-ref {
+    text-decoration: underline;
+}
+
+.post-continue-reading-ref:visited {
+    color: #c0c0c0;
+    text-decoration: none;
+}
+
+.post-imgs {
+    display: flex;
+    border: 0.5px solid gray;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgs-container {
+    border: none;
 }
 
 h2 {
